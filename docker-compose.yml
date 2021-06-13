@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  api:
+    build: .
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./src:/api
+    ports:
+      - 8888:8000
+  worker:
+    build: .
+    command: rq worker -u redis://redis:6379/0 --name worker_name default_queue_name
+    volumes:
+      - ./src:/api
+    depends_on:
+      - redis
+
+  # dashboard:
+  #   build: .
+  # opensees:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./dockerfiles/Dockerfile
+  #   volumes:
+  #     - ./src:/src
+  #   ports:
+  #     - 10000:10000
+
+  redis:
+    image: redis
+
