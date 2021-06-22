@@ -28,9 +28,28 @@ Make it dead simple.
 ```
 
 ## TODO
-- [ ] token login endpoint
-	- [ ] sqlite or postgres?
-- [ ] rq-dashboard
-- [ ] openseespy.. crossenv? .. build package (compile src code openseespy) locally on arm.
+merge branches.
+- [ ] frontend
+	- [ ] best option? nextjs?.. easily deployable. a way for users to sign in, start jobs and PAY.
 
-Goal is to deploy it to GCP free tier with K8s to see it in action.
+- billing.. how to charge a service?
+	- give ui + stripe
+
+- [ ] rq-dashboard
+	- [ ] view result data of jobs? --possible?
+	- [ ] provide a protected view to dashboard via FASTAPI?
+
+- logs
+	- [ ] kibana + elasticsearch
+
+- [ ] postgres and automated migrations
+	- [ ] sharded + multi-tenant
+		- [ ] sqlalchemy horizontal sharding
+	- [ ] test failovers
+	- [ ] read-only replicas
+
+- [ ] dask and multi-processing
+
+- [ ] deploy
+	- [ ] First deploy it with docker-compose.
+	- [ ] Goal is to deploy it to GCP free tier with K8s to see it in action.

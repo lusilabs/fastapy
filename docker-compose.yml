@@ -11,14 +11,21 @@ services:
       - 8888:8000
   worker:
     build: .
-    command: rq worker -u redis://redis:6379/0 --name worker_name default_queue_name
+    command: rq worker -u redis://redis:6379/0 --name worker_name_2 default_queue_name
+    volumes:
+      - ./src:/api
+    depends_on:
+      - redis
+  dashboard:
+    build: .
+    command: rq-dashboard -b 0.0.0.0 -p 9181 --redis-url redis://redis:6379/0
+    ports:
+      - 9181:9181
     volumes:
       - ./src:/api
     depends_on:
       - redis
 
-  # dashboard:
-  #   build: .
   # opensees:
   #   build:
   #     context: ./
