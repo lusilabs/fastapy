@@ -5,7 +5,7 @@ from rq import Queue
 from redis import Redis
 from fastapi import FastAPI, HTTPException, status
 from rq.job import Job
-from jobs import runTask
+from jobs import runTask, anotherJob
 from account.users import Token, UserInDB, User, authenticate_user, create_access_token, get_current_active_user, oauth2_scheme, \
     fake_users_db, ACCESS_TOKEN_EXPIRE_MINUTES
 from datetime import timedelta
@@ -46,7 +46,7 @@ def protected_route(token: str = Depends(oauth2_scheme)):
 
 @app.post("/jobs", status_code=201)
 def start_task():
-    job = q.enqueue(runTask)
+    job = q.enqueue(anotherJob, args=['some-arg'], kwargs={'kwarg1': 'value1'})
     return {'jobID': job.id}
 
 
