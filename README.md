@@ -1,6 +1,5 @@
 # README
-Complete scalable backend.
-Dead-simple no-setup. KISS. DRY.
+Simple scalable backend with job scheduling written in python using rq and FastAPI.
 
 access swagger docs here/login
 ```
@@ -13,13 +12,7 @@ http://localhost:9181
 ```
 
 ## TODO
-how to solve storing results in folders? .yml files... .csv files
-out files.. do I just dump everything back in the html call or give a link to an ephemereal bucket?
-
-- login/users
-	via JWT, this will use postgrest in the background ?? too difficult?
-
--
+- login/users via JWT, this will use skylab.
 - pass in a string or a file that opensees will execute... all results will be put in a bucket. or a subset will be returned in the response.
 - store results in google cloud buckets that expire in like a week
 - [ ] prod -- gcp stderr or other hosted solution on production
