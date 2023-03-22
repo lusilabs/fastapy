@@ -23,7 +23,7 @@ rq==1.8.1
 rq-dashboard==0.6.1
 rsa==4.7.2
 six==1.16.0
-starlette==0.14.2
+starlette==0.25.0
 typing-extensions==3.10.0.0
 uvicorn==0.14.0
 Werkzeug==2.0.1
