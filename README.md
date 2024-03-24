@@ -1,5 +1,5 @@
 # README
-Simple scalable backend with job scheduling system written in python that uses rq and FastAPI.
+Simple scalable and dockerized backend with a job scheduling system written in python that uses rq and FastAPI.
 
 # Swagger docs.
 ```
