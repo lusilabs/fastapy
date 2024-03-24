@@ -1,12 +1,12 @@
 # README
 Simple scalable backend with job scheduling system written in python that uses rq and FastAPI.
 
-access swagger docs here/login
+# Swagger docs.
 ```
 http://localhost:8888/docs
 ```
 
-jobs dashboard
+# Jobs dashboard.
 ```
 http://localhost:9181
 ```
