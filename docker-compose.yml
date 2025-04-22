@@ -28,16 +28,6 @@ services:
       - RQ_DASHBOARD_PASSWORD=password
     depends_on:
       - redis
-
-  # opensees:
-  #   build:
-  #     context: ./
-  #     dockerfile: ./dockerfiles/opensees/Dockerfile
-  #   volumes:
-  #     - ./src:/src
-  #   ports:
-  #     - 10000:10000
-
   redis:
     image: redis
 
