@@ -6,7 +6,7 @@ cffi==1.14.5
 cryptography==3.4.7
 ecdsa==0.17.0
 fastapi==0.65.2
-Flask==2.0.1
+Flask==2.3.2
 h11==0.12.0
 itsdangerous==2.0.1
 Jinja2==3.0.1
